@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+.tabs {
+  list-style: none;
+  background: #598ad8;
+  position: relative;
+}
+
+.tabs:after {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background: #FFF;
+  position: absolute;
+  z-index: 5;
+  bottom: -6px;
+  left: 0;
+  border-top: 1px solid #a5a5a5;
+}
+
+.tab {
+  display: inline-block;
+  width: 175px;
+  height: 26px;
+  background: #a6caf6;
+  padding: 5px;
+  position: relative;
+  border-top: 1px solid #728cad;
+  margin-right: 4px;
+}
+
+.tab:before, .tab:after {
+  content: '';
+  width: 8px;
+  height: 27px;
+  background: #a6caf6;
+  position: absolute;
+  top: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab:before {
+  left: -6px;
+  border-left: 1px solid #728cad;
+  -webkit-transform:rotate(15deg);
+     -moz-transform:rotate(15deg);
+      -ms-transform:rotate(15deg);
+       -o-transform:rotate(15deg);
+          transform:rotate(15deg);
+}
+
+.tab:after {
+  right: -6px;
+  border-right: 1px solid #728cad;
+  -webkit-transform:rotate(-15deg);
+   -moz-transform:rotate(-15deg);
+    -ms-transform:rotate(-15deg);
+     -o-transform:rotate(-15deg);
+        transform:rotate(-15deg);
+}
+
+.tab.active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+  height: 27px;
+  margin-bottom: -1px;
+  z-index: 10;
+}
+
+.tab.active:before, .tab.active:after {
+  background: #fff;
+
+}
