@@ -113,3 +113,15 @@ button.close {
   font-weight: normal;
   text-shadow: none;
 }
+
+.tab-content {
+
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}

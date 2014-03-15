@@ -7,27 +7,34 @@
 </head>
 <body>
     <ul class="tabs">
-      <li class="tab">
-        Title
-        <button type="button" class="close" aria-hidden="true">×</button>
+      <li class="tab" data-target="#page1">
+        Page 1
+        <button type="button" class="close">×</button>
       </li>
-      <li class="tab active">
-        Tile
-        <button type="button" class="close" aria-hidden="true">×</button>
+      <li class="tab active" data-target="#page2">
+        Page 2
+        <button type="button" class="close">×</button>
       </li>
-      <li class="tab">
-        Tile
-        <button type="button" class="close" aria-hidden="true">×</button>
+      <li class="tab" data-target="#page3">
+        Page 3
+        <button type="button" class="close">×</button>
       </li>
-      <li class="tab">
-        Title
-        <button type="button" class="close" aria-hidden="true">×</button>
+      <li class="tab" data-target="#page4">
+        Page 4
+        <button type="button" class="close">×</button>
       </li>
-      <li class="tab">
-        Title
-        <button type="button" class="close" aria-hidden="true">×</button>
+      <li class="tab" data-target="#page5">
+        Page 5
+        <button type="button" class="close">×</button>
       </li>
     </ul>
+    <div class="tab-content">
+      <div class="tab-pane" id="page1">page 1</div>
+      <div class="tab-pane active" id="page2">page 2</div>
+      <div class="tab-pane" id="page3">page 3</div>
+      <div class="tab-pane" id="page4">page 4</div>
+      <div class="tab-pane" id="page5">page 5</div>
+    </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="chrometab.js"></script>
 </body>
