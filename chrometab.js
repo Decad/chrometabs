@@ -9,7 +9,8 @@
                 var $tabContainer = $(this),
                     $tabs = $tabContainer.find('.tab'),
                     mouseDown = false,
-                    draggedTab = null;
+                    draggedTab = null,
+                    tCount = $tabs.length;
 
                 $tabs.on('mousedown', function(e){
                     var $this = $(this),
@@ -17,6 +18,7 @@
 
                     $('.tab').add('.tab-pane').removeClass('active')
                     $this.add($pane).addClass('active')
+
 
                     mouseDown = true;
                     draggedTab = $this;
@@ -26,15 +28,26 @@
                 $(document).on('mousemove', function(e){
                     if(!mouseDown && !draggedTab) return;
 
-                    var $this = $(this);
+                    var left = e.clientX - offset,
+                        ati = $('.tabs').find('.tab.active').index();
 
-                    draggedTab.offset({ left: e.clientX - offset })
+                    draggedTab.offset({ left: left })
+
+
+                    t = $tabs.sort(function(a, b){
+                        return $(a).offset().left > $(b).offset().left
+                    })
+
+                    $tabs.detach();
+                    $tabContainer.append(t)
+                    $tabContainer.find('.tab')
+
                     e.preventDefault()
                 })
 
                 $(document).on('mouseup', function(){
                     if(mouseDown && draggedTab){
-
+                        $tabs.css('left', '')
                     }
                     mouseDown = false;
                     draggedTab = null;
