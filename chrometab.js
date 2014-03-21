@@ -19,7 +19,6 @@
                     $('.tab').add('.tab-pane').removeClass('active')
                     $this.add($pane).addClass('active')
 
-
                     mouseDown = true;
                     draggedTab = $this;
                     offset = e.offsetX
@@ -33,14 +32,18 @@
 
                     draggedTab.offset({ left: left })
 
-
                     t = $tabs.sort(function(a, b){
                         return $(a).offset().left > $(b).offset().left
                     })
 
                     $tabs.detach();
                     $tabContainer.append(t)
-                    $tabContainer.find('.tab')
+
+                    if(ati != $('.tabs').find('.tab.active').index()){
+                        $('.tabs').find('.tab.active').css('left', '')
+                    }
+
+                    $tabs = $tabContainer.find('.tab')
 
                     e.preventDefault()
                 })
