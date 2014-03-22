@@ -12,6 +12,10 @@
                     draggedTab = null,
                     tCount = $tabs.length;
 
+
+                // Fix inline-block margin issues.
+                $tabContainer.append($tabs.detach())
+
                 $tabs.on('mousedown', function(e){
                     var $this = $(this),
                         $pane = $this.data('target');
